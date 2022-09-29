@@ -55,7 +55,6 @@ class Linked_lost {
             temp = temp.next;
         }
         System.out.println("\nTotal Length of path is :" + weight);
-        System.out.println("");
     }
 }
 
@@ -161,7 +160,7 @@ class Graph {
     Linked_lost Adjacency_List[];
 
     public Graph(int v, int e) {
-        vertices = v;
+        vertices = v; 
         edges = 2 * e;
         Adjacency_List = new Linked_lost[vertices];
         for (int i = 0; i < vertices; i++) {
@@ -194,6 +193,7 @@ class Graph {
         while (Q.isempty() == false) {
             edge temp = Q.dequeue();
             if (vis[temp.destination] == false) {
+                System.out.println("Selected Vertex is :"+temp.destination);
                 System.out.println("Edge between vertex " + temp.source + " and vertex " + temp.destination);
                 result.Push(temp.destination, temp.weight);
                 vis[temp.destination] = true;
@@ -216,6 +216,7 @@ class Graph {
             System.out.println("--------");
             Q.print();
             System.out.println("--------");
+            System.out.println("\n");
         }
         System.out.println("Final Result is ");
         result.display();
@@ -235,15 +236,15 @@ public class Prims_Algorithm_3 {
         edges = sc.nextInt();
         Graph g = new Graph(vertices, edges);
         for (int i = 0; i < edges; i++) {
-            System.out.println("Enter edge number " + (i + 1));
-            System.out.print("Source :");
-            int source = sc.nextInt();
-            System.out.print("Destination :");
-            int destination = sc.nextInt();
-            System.out.print("Weight :");
-            int weight = sc.nextInt();
-            g.addedge(source, destination, weight);
-            System.out.println();
+        System.out.println("Enter edge number " + (i + 1));
+        System.out.print("Source :");
+        int source = sc.nextInt();
+        System.out.print("Destination :");
+        int destination = sc.nextInt();
+        System.out.print("Weight :");
+        int weight = sc.nextInt();
+        g.addedge(source, destination, weight);
+        System.out.println();
         }
         System.out.println("Your Adjacency List is As Follows :");
         g.display();
@@ -252,7 +253,7 @@ public class Prims_Algorithm_3 {
         int SOURCE = sc.nextInt();
         g.prims(SOURCE);
         sc.close();
-        // Graph g=new Graph(9, 14);
+        // Graph g = new Graph(9, 14);
         // g.addedge(0, 1, 4);
         // g.addedge(0, 7, 8);
         // g.addedge(1, 7, 11);
@@ -263,10 +264,10 @@ public class Prims_Algorithm_3 {
         // g.addedge(3, 5, 14);
         // g.addedge(3, 4, 9);
         // g.addedge(4, 5, 10);
-        // g.addedge(5,6, 2);
-        // g.addedge(6,8, 6);
-        // g.addedge(6,7, 1);
-        // g.addedge(7,8, 7);
+        // g.addedge(5, 6, 2);
+        // g.addedge(6, 8, 6);
+        // g.addedge(6, 7, 1);
+        // g.addedge(7, 8, 7);
         // g.display();
         // g.prims(2);
     }
