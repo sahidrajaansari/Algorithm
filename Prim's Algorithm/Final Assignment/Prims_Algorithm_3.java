@@ -69,7 +69,6 @@ class edge {
         this.destination = destination;
     }
 }
-
 class Priority_Queue {
     edge Priority_Queue[];
     int size;
